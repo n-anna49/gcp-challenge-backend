@@ -1,0 +1,22 @@
+# openapi2-run.yaml
+swagger: '2.0'
+info:
+  title: visitor-count-api
+  description: API on API Gateway with a Cloud Run backend
+  version: 1.0.0
+schemes:
+- https
+produces:
+- application/json
+x-google-backend:
+  address: https://cloudrun-2z45qpws3a-uw.a.run.app
+paths:
+  /:
+    get:
+      summary: Cloud Run increment visitor count
+      operationId: count_visitors
+      responses:
+        '200':
+          description: Visitor count was incremented
+          schema:
+            type: string

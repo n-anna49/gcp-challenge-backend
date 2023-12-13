@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  script: |
+    gcloud run deploy cloudrunservice --image gcr.io/clever-guard-407300/mydockerimage:firstversion --region us-west1 --platform managed --allow-unauthenticated
