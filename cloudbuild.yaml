@@ -1,4 +1,12 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  script: |
-    gcloud run deploy cloudrunservice --image gcr.io/clever-guard-407300/mydockerimage:firstversion --region us-west1 --platform managed --allow-unauthenticated
+  # Docker Build
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', | 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/python-repo/nsdev49:${SHORT_SHA}', '.']
+
+  # Docker push to Google Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/python-repo/nsdev49:${SHORT-SHA}']
+
+# Store images in Artifact Registry
+images:
+  - us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/python-repo/nsdev49:${SHORT-SHA}
