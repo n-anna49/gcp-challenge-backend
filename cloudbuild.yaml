@@ -1,13 +1,13 @@
 steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', | 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/mydocker:${SHORT_SHA}', '.']
+  args: ['build', '-t', | 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage', '.']
 
   # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/mydocker:${SHORT-SHA}']
+  args: ['push', 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage']
 
 # Store images in Artifact Registry
 images:
-  - us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/mydocker:${SHORT-SHA}
+  - us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage
   
