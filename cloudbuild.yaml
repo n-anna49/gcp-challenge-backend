@@ -7,6 +7,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage']
 
+# Store images in Artifact Registry
 images:
   - 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage'
 
