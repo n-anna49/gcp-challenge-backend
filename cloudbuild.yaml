@@ -1,9 +1,9 @@
 steps:
-# Docker Build
+  # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage', '.']
 
-# Docker push to Google Artifact Registry
+  # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage']
 
