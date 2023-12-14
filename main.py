@@ -13,7 +13,7 @@ firebase_admin.initialize_app()
 # Retrns a client object connected to Firestore db
 db = firestore.client()
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def count_visitors():
     # Reference to a document in a specific collection
     ref = db.collection('visitorcount').document('qF1aQrKv29nPMAn0463m')
