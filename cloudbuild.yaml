@@ -1,4 +1,5 @@
 steps:
+  # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage', '.']
   - name: 'gcr.io/cloud-builders/docker'
