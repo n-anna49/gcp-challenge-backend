@@ -7,15 +7,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage']
 
-# Entrypoint, timeout and environment variables
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'gcloud'
-    timeout: 240s
-    args: ['compute', 'instances', 
-           'create-with-container', 'myvm',
-           '--container-image', 
-           'us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage']
-    env:
-      - 'CLOUDSDK_COMPUTE_REGION=us-west1'
-      - 'CLOUDSDK_COMPUTE_ZONE=us-west1-a'
-  
+# Store images in Artifact Registry
+images:
+  - us-west1-docker.pkg.dev/clever-guard-407300/mydockerrepo/cloudbuildimage
