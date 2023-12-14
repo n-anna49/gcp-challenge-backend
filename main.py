@@ -21,7 +21,7 @@ def count_visitors():
     ref.update({'VisitorCount': firestore.Increment(1)})
 
     visitor_count = ref.get().to_dict()['VisitorCount']
-    response = jsonify({'Visitor Count!!!': visitor_count})
+    response = jsonify({'Visitor Count': 1})
     return response
 
 if __name__ == "__main__":
