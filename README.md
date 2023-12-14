@@ -3,4 +3,4 @@ The following files consist of the backend portion of the GCP challenge. A Pytho
 
 The application was containerized using Docker for portability. The Dockerfile sets up the instructions for building the image. The .dockerignore file prevents unnecessary files from being put in the image.
 
-
+The apiconfig.yaml defines the API for the web app, and the cloudbuild.yaml defines the build configuration for automation.
