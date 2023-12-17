@@ -1,7 +1,6 @@
+# Include Python in Docker environment
 FROM python:3.10-slim
-
-ENV PYTHONUNBUFFERED True
-
+# Working directory
 ENV APP_HOME /app
 
 ENV PORT 5000
