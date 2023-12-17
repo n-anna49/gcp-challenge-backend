@@ -1,4 +1,4 @@
-# openapi2-run.yaml
+# OpenAPI spec
 swagger: '2.0'
 info:
   title: visitor-count-api
