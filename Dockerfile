@@ -12,4 +12,5 @@ COPY . ./
 # Install dependencies
 RUN pip install -r requirements.txt
 
+# Run app
 CMD exec gunicorn --bind :$PORT main:app
